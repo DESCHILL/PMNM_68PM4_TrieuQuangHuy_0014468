@@ -1,15 +1,18 @@
 <?php
 
-class home
+require_once '../app/core/Controller.php';
+
+class home extends Controller
 {
     public function index()
     {
-        echo "<h1>Home Page</h1>";
+        $this->requireLogin();
+        $this->view('home/index');
     }
 
     public function about()
     {
-        echo "<h1>About Page</h1>";
+        $this->view('home/about');
     }
 }
 

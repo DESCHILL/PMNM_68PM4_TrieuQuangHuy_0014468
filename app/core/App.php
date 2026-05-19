@@ -2,7 +2,7 @@
 
 class App
 {
-    protected $controller = 'home';
+    protected $controller = 'auth';
     protected $action = 'index';
     protected $params = [];
 
@@ -57,6 +57,8 @@ class App
                 filter_var(trim($_GET['url'], '/'))
             );
         }
+
+        return [];
     }
 }
 

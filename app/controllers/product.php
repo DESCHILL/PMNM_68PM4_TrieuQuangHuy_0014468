@@ -1,15 +1,17 @@
 <?php
 
-class product
+require_once '../app/core/Controller.php';
+
+class product extends Controller
 {
     public function index()
     {
-        echo "<h1>Product Page</h1>";
+        $this->view('product/index');
     }
 
     public function detail($id = '')
     {
-        echo "<h1>Product Detail: $id</h1>";
+        $this->view('product/detail', ['id' => $id]);
     }
 }
 
