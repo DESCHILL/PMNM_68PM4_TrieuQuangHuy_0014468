@@ -4,6 +4,7 @@
             <h1>Danh sach sinh vien</h1>
             <p>Quan ly thong tin sinh vien trong he thong.</p>
         </div>
+        <span>Tong: <?= (int) ($totalStudents ?? 0) ?> sinh vien</span>
     </div>
 
     <div class="table-wrapper">
@@ -36,4 +37,24 @@
             </tbody>
         </table>
     </div>
+
+    <?php if (($totalPages ?? 1) > 1): ?>
+        <nav class="pagination" aria-label="Phan trang sinh vien">
+            <?php if (($currentPage ?? 1) > 1): ?>
+                <a href="<?= $this->url('sinhvien') . '?page=' . (($currentPage ?? 1) - 1) ?>">Truoc</a>
+            <?php endif; ?>
+
+            <?php for ($page = 1; $page <= ($totalPages ?? 1); $page++): ?>
+                <?php if ($page === ($currentPage ?? 1)): ?>
+                    <span class="active"><?= $page ?></span>
+                <?php else: ?>
+                    <a href="<?= $this->url('sinhvien') . '?page=' . $page ?>"><?= $page ?></a>
+                <?php endif; ?>
+            <?php endfor; ?>
+
+            <?php if (($currentPage ?? 1) < ($totalPages ?? 1)): ?>
+                <a href="<?= $this->url('sinhvien') . '?page=' . (($currentPage ?? 1) + 1) ?>">Sau</a>
+            <?php endif; ?>
+        </nav>
+    <?php endif; ?>
 </section>
