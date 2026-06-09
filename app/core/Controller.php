@@ -2,6 +2,21 @@
 
 class Controller
 {
+    protected function model($model)
+    {
+        $modelPath = '../app/models/' . $model . '.php';
+
+        if (!file_exists($modelPath)) {
+            http_response_code(500);
+            echo 'Model not found: ' . htmlspecialchars($model);
+            return null;
+        }
+
+        require_once $modelPath;
+
+        return new $model;
+    }
+
     protected function view($view, $data = [])
     {
         $viewPath = '../app/views/' . $view . '.php';
