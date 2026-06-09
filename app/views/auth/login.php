@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dang nhap</title>
-    <link rel="stylesheet" href="<?= $this->url('assets/css/login.css') ?>">
-</head>
-<body>
-    <main class="login-wrapper">
+<div class="container">
+    <div class="login-wrapper">
         <section class="login-banner">
             <h1>Chao mung tro lai</h1>
             <p>Dang nhap de quan ly san pham, theo doi thong tin va tiep tuc lam viec voi he thong.</p>
@@ -52,6 +44,5 @@
 
             <p class="register-text">Tai khoan demo: <strong>admin</strong> / <strong>123456</strong></p>
         </section>
-    </main>
-</body>
-</html>
+    </div>
+</div>

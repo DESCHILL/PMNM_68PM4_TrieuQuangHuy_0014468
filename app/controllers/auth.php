@@ -31,6 +31,8 @@ class auth extends Controller
         $this->view('auth/login', [
             'error' => $error,
             'username' => $username,
+            'title' => 'Dang nhap',
+            'styles' => ['assets/css/login.css'],
         ]);
     }
 

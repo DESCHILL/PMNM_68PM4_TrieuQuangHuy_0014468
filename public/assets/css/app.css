@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #243044;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #d8e0ec;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    gap: 20px;
+}
+
+.brand {
+    color: #102033;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.nav a {
+    color: #334155;
+    font-weight: 600;
+}
+
+.page-content {
+    min-height: calc(100vh - 128px);
+    padding: 32px 0;
+}
+
+.site-footer {
+    background: #ffffff;
+    border-top: 1px solid #d8e0ec;
+    color: #64748b;
+    padding: 18px 0;
+    text-align: center;
+}
+
+.page-panel {
+    background: #ffffff;
+    border: 1px solid #d8e0ec;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.page-panel h1 {
+    margin: 0 0 12px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.data-table th,
+.data-table td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.data-table th {
+    background: #f8fafc;
+    color: #334155;
+    font-size: 14px;
+}
+
+.empty-state {
+    color: #64748b;
+    padding: 18px;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.pagination a,
+.pagination span {
+    min-width: 36px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.pagination .active {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+    }
+
+    .toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

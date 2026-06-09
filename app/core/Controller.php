@@ -17,7 +17,7 @@ class Controller
         return new $model;
     }
 
-    protected function view($view, $data = [])
+    protected function view($view, $data = [], $layout = 'master')
     {
         $viewPath = '../app/views/' . $view . '.php';
 
@@ -28,7 +28,21 @@ class Controller
         }
 
         extract($data);
-        require_once $viewPath;
+
+        if ($layout === null) {
+            require_once $viewPath;
+            return;
+        }
+
+        $layoutPath = '../app/views/layouts/' . $layout . '.php';
+
+        if (!file_exists($layoutPath)) {
+            http_response_code(500);
+            echo 'Layout not found: ' . htmlspecialchars($layout);
+            return;
+        }
+
+        require_once $layoutPath;
     }
 
     protected function redirect($path = '')
