@@ -33,7 +33,7 @@ class auth extends Controller
             'username' => $username,
             'title' => 'Dang nhap',
             'styles' => ['assets/css/login.css'],
-        ]);
+        ], 'auth');
     }
 
     public function logout()
